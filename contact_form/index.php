@@ -9,7 +9,7 @@
 $msg = '';
 $msgClass ='';
 
-if(filter_has_var(INPUT_POST,'submit')){
+if(filter_has_var(INPUT_POST,'submit')){ //validations
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
@@ -47,7 +47,6 @@ if(!empty($email) && !empty($name) && !empty(message)){
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
