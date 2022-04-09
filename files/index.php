@@ -16,7 +16,7 @@
 echo file_exist($file);
 
 
-< - - Get abs path- ->
+< - - Get absolute path- ->
 
 echo realpath($file);
 
