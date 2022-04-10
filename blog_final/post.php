@@ -39,9 +39,12 @@ mysqli_close($conn);
             <p class="card-text">Created on : <?php echo $post['created_at'];?></p>
             <p>by <?php echo $post['author'];?></p>
             <p><?php echo $post['body'];?></p>
-
+            <hr>
         </div>
     </div>
+    <br>
+    <a href="<?php echo ROOT_URL;?>editPost.php?id=<?php echo $post['id'];?>"><button type="button"
+            class="btn btn-primary">Edit</button></a>
 
 
 
