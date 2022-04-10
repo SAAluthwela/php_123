@@ -1,16 +1,18 @@
 <?php
-
-require('config/config.php');
+ require('config/config.php');
  require('config/db_conn.php');
 
+// get ID
+$id = mysqli_real_escape_string($conn,$_GET['id']);
+
 //create query
- $query = 'SELECT * FROM posts';
+ $query = 'SELECT * FROM posts WHERE id='.$id;
 
 //Get result
 $result = mysqli_query($conn,$query);
 
 //Fetch data
-$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+$post = mysqli_fetch_assoc($result);
 //var_dump($posts);
 
 //Free Result
@@ -24,10 +26,12 @@ mysqli_close($conn);
 ?>
 
 <?php include('inc/header.php')?>
-
 <center>
-    <h1>POSTS</h1>
-    <?php foreach($posts as $post) :?>
+    <br>
+    <a href="<?php echo ROOT_URL;?>"><button type="button" class="btn btn-success btn-sm">Back</button></a>
+    <br><br>
+    <h1>POST - <?php echo $id ;?></h1>
+
     <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
         <div class="card-header"><?php echo $post['id']?></div>
         <div class="card-body">
@@ -35,15 +39,15 @@ mysqli_close($conn);
             <p class="card-text">Created on : <?php echo $post['created_at'];?></p>
             <p>by <?php echo $post['author'];?></p>
             <p><?php echo $post['body'];?></p>
-            <a class="btn btn-info" href="<?php echo ROOT_URL;?>post.php?id=<?php echo $post['id'];?>">Read
-                More</a>
+
         </div>
     </div>
 
 
-    <?php endforeach;?>
+
 
 </center>
+
 
 
 <?php include('inc/footer.php')?>
