@@ -19,6 +19,11 @@
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo ROOT_URL?>addPost.php">Add Post
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
 
 
             </ul>
