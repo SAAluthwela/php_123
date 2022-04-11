@@ -60,7 +60,7 @@ mysqli_close($conn);
 <div class="container">
 
     <center>
-        <h1>ADD POST</h1>
+        <h1>EDIT POST</h1>
         <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
             <div class="form-group">
                 <label for="title">Title</label>
