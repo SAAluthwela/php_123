@@ -1,10 +1,11 @@
 <?php
 
- session_start();
+   session_start();
 
-   $_SESSION;
+     include('connection.php');
+     include('functions.php');
 
-  require_once('../config/config.php');
+    $user_data = check_login($con);
 
 ?>
 
