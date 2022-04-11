@@ -2,6 +2,29 @@
  require('config/config.php');
  require('config/db_conn.php');
 
+// check for submit
+ if(isset($_POST['delete'])){
+  
+    // Get from data
+   $delete_id = mysqli_real_escape_string($conn,$_POST['delete_id']);  
+  
+  
+   $query = "DELETE FROM posts WHERE id={$delete_id}";
+
+   if(mysqli_query($conn,$query)){
+     //success
+       header('Location:'.ROOT_URL.'');
+
+   }else{
+    //error  
+    
+     echo 'ERROR :'. mysqli_error($conn);
+    
+   }
+
+}
+
+
 // get ID
 $id = mysqli_real_escape_string($conn,$_GET['id']);
 
@@ -40,11 +63,30 @@ mysqli_close($conn);
             <p>by <?php echo $post['author'];?></p>
             <p><?php echo $post['body'];?></p>
             <hr>
+            <div style="margin-left:-150px">
+                <form class="pull-right" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                    <input type="hidden" name="delete_id" value="<?php echo $post['id'];?>">
+                    <input type="submit" name="delete" value="Delete" class="btn btn-danger">
+                </form>
+            </div>
+
+            <div style="margin-left:150px;margin-top:-38px">
+                <a href="<?php echo ROOT_URL;?>editPost.php?id=<?php echo $post['id'];?>"><button
+                        style="padding:6px 20px" type="button" class="btn btn-secondary">Edit</button></a>
+            </div>
+
         </div>
     </div>
+
+
+
     <br>
-    <a href="<?php echo ROOT_URL;?>editPost.php?id=<?php echo $post['id'];?>"><button type="button"
-            class="btn btn-primary">Edit</button></a>
+
+
+
+
+
+
 
 
 
