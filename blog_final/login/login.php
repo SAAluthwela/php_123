@@ -15,7 +15,8 @@
 </head>
 
 <body>
-    <div class="container" style="width: 400px;height:250px;margin-top:8%">
+
+    <div class="container" style="width: 400px;height:250px;margin-top:8%; ">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
 
             <fieldset>
@@ -42,22 +43,27 @@
                     </div>
 
                 </div>
-                <a href="index.php" style="text-decoration: none">
-                    <div class="d-grid gap-2" style="margin-top:5px">
-                        <button class="btn btn-lg btn-primary" type="button">Login</button>
+                <div> <a href="index.php" style="text-decoration: none">
+                        <div class="d-grid gap-2" style="margin-top:5px">
+                            <button class="btn btn-lg btn-primary" type="button">Login</button>
 
-                    </div>
-                </a>
+                        </div>
+                    </a></div>
                 <hr>
-                <h5 style="margin-left:45%;color:blue">OR</h5>
-                <a href="signup.php" style="text-decoration: none">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-lg btn-success" type="button">Signup</button>
+                <div>
+                    <h5 style="margin-left:45%;color:blue">OR</h5>
+                    <a href="signup.php" style="text-decoration: none">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-lg btn-success" type="button">Signup</button>
 
-                    </div>
-                </a>
+                        </div>
+                    </a>
+                </div>
         </form>
     </div>
+
+
+
 </body>
 
 </html>
